@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Список техосмотров
+{% endblock %}
+
+{% block content %}
+<div class = "features">
+    <h1>Список техосмотров</h1>
+
+
+     {% if techosmotr %}
+        {% for el in techosmotr %}
+        <div class = "alert alert-warning">
+           Авто: {{ el.cars }}<br>
+           Заказчик: {{ el.zakazchik }}<br>
+           Дата выдачи: {{ el.data_vydachi }}<br>
+           Срок действия: {{ el.srok_deistviya }}<br>
+            Номер технической карты: {{ el.number_tex_karty }}<br>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Zapisei v tablice techosmotr otsytstvyut</p>
+    {% endif %}
+</div>
+{% endblock %}

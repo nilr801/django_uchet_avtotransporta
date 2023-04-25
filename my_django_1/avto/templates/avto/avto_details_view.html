@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}{{car.marka}}{% endblock%}
+{% block content %}
+    <div class = "features info">
+        <h3>Марка: {{ car.marka }}</h3>
+        <p>Модель: {{ car.model }}</p>
+        <p>Дата выпуска: {{ car.data_vypuska }}</p>
+        <p>Вин-ноиер: {{car.vin_number}}</p>
+        <p>Номер авто: {{ car.number_avto }}</p>
+        <p>Пробег: {{ car.probeg }}
+        <p>Водитель: {{ car.voditels }}</p>
+        <a href="{% url 'avto_delete' car.id %}" class="btn btn-danger">Удаление</a>
+        <a href="{% url 'avto_update' car.id %}" class="btn btn-info">Редактирование</a>
+    </div>
+{% endblock %}

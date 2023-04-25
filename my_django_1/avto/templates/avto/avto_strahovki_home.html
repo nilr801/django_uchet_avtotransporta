@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Список страховок
+{% endblock %}
+
+{% block content %}
+<div class = "features">
+    <h1>Список страховок</h1>
+
+
+     {% if strahovki %}
+        {% for el in strahovki %}
+        <div class = "alert alert-warning">
+            Авто: {{el.cars}}<br>
+            Собственник авто: {{el.sobstvennik_avto}}<br>
+            Дата начала: {{ el.data_nachala }}<br>
+            Дата конца: {{ el.data_conca }}<br>
+            Номер полиса: {{ el.number_polisa }}<br>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Zapisei v tablice strahovki otsytstvyut</p>
+    {% endif %}
+</div>
+{% endblock %}

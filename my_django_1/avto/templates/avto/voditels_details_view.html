@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}{{voditel.fio}}{% endblock%}
+{% block content %}
+    <div class = "features info">
+        <h3>ФИО: {{ voditel.fio }}</h3>
+        <p>Номер прав: {{ voditel.number_prav }}</p>
+        <p>Дата окончания прав: {{ voditel.conec_prav }}</p>
+        <p>Примечание: {{ voditel.primechanie }}</p>
+        <a href="{% url 'voditels_delete' voditel.id %}" class="btn btn-danger">Удаление</a>
+        <a href="{% url 'voditels_update' voditel.id %}" class="btn btn-info">Редактирование</a>
+
+    </div>
+{% endblock %}

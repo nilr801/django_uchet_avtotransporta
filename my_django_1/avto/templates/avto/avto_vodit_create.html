@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Добавление водителей
+{% endblock %}
+
+{% block content %}
+<div class = "features info2">
+    <h1>Добавление водителей</h1>
+    <form method="post">
+        {% csrf_token %}
+        <a>ФИО:</a>
+        {{ form.fio }}
+        <a>Номер прав (Уникальное поле):</a>
+        {{ form.number_prav }}
+        <a>Дата окончания действия прав:</a>
+        {{ form.conec_prav }}
+        <a>Примечание:</a>
+        {{ form.primechanie }}<br>
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type = "submit">Добавить водителя</button>
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Добавление страховки
+{% endblock %}
+
+{% block content %}
+<div class = "features info2">
+    <h1>Добавление страховки</h1>
+    <form method="post">
+        {% csrf_token %}
+        <a>авто (на 1 авто 1 страховка):</a>
+        {{ form.cars }}
+        <a>собственник авто:</a>
+        {{ form.sobstvennik_avto }}
+        <a>дата начала:</a>
+        {{ form.data_nachala }}
+        <a>дата конца:</a>
+        {{ form.data_conca }}
+        <a>номер полиса:</a>
+        {{ form.number_polisa }}<br>
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type = "submit">Добавить страховку</button>
+    </form>
+
+</div>
+{% endblock %}

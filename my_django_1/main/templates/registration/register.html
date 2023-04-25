@@ -1,0 +1,38 @@
+
+
+{% extends 'main/layout.html' %}
+{% block title %}
+   Регистрация
+{% endblock %}
+{% block content %}
+<div class = "features info1">
+  <h2>Регистрация</h2>
+  <form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+    <label for="id_username">Имя пользователя:</label>
+    <input type="text" name="username" id="id_username">
+    <br>
+    <label for="id_email">Email:</label>
+    <br>
+    <input type="email" name="email" id="id_email">
+    <br>
+    <label for="id_password">Пароль:</label>
+    <input type="password" name="password" id="id_password">
+    <br>
+    <label for="id_confirm_password">Подтвердите пароль:</label>
+    <input type="password" name="confirm_password" id="id_confirm_password">
+    <br><br>
+    <input type="submit" value="Зарегистрироваться">
+    <br>
+    <h4>{{error_msg}}</h4>
+    <h4>{{error}}</h4>
+    <br>
+  </form>
+</div>
+{% endblock %}
+</html>
+
+
+
+
+

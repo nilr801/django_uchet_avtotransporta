@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Список автомобилей
+{% endblock %}
+
+{% block content %}
+<div class = "features">
+    <h1>Список автомобилей</h1>
+
+
+
+     {% if avto%}
+        {% for el in avto %}
+        <div class = "alert alert-warning">
+            <h3>Авто: {{el.marka}} {{el.model}}</h3>
+            <p>Номер авто: {{el.number_avto}}</p>
+        <a href = "{% url 'avto_view' el.id %}" class="btn btn-warning">Смотреть информацию</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Zapisei v tablice cars otsytstvyut</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Добавление техосмотра
+{% endblock %}
+
+{% block content %}
+<div class = "features info2">
+    <h1>Добавление техосмотра</h1>
+    <form method="post">
+        {% csrf_token %}
+        <a>авто (на 1 авто 1 техосмотр):</a>
+        {{ form.cars }}
+        <a>заказчик:</a>
+        {{ form.zakazchik }}
+        <a>дата выдачи:</a>
+        {{ form.data_vydachi }}
+        <a>срок действия:</a>
+        {{ form.srok_deistviya }}
+        <a>номер техничерской карты:</a>
+        {{ form.number_tex_karty }}<br>
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type = "submit">Добавить техосмотр</button>
+    </form>
+
+</div>
+{% endblock %}
